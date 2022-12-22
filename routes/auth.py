@@ -3,7 +3,7 @@ from fastapi import APIRouter, status
 
 from models import User
 
-router = APIRouter()
+router = APIRouter(prefix="/auth", tags=["Auth"])
 
 
 @router.post(

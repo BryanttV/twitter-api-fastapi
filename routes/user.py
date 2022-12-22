@@ -3,7 +3,7 @@ from fastapi import APIRouter, status
 
 from models import User
 
-router = APIRouter()
+router = APIRouter(prefix="/users", tags=["Users"])
 
 
 @router.get(
@@ -39,7 +39,7 @@ def delete_user():
 @router.patch(
     path="/{uuid}",
     response_model=User,
-    status_code=status.HTTP_204_NO_CONTENT,
+    status_code=status.HTTP_200_OK,
     summary="Update a user",
 )
 def update_user():
