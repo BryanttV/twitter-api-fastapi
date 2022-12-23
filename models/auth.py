@@ -1,10 +1,18 @@
 """Auth model"""
-from pydantic import Field
+from pydantic import BaseModel, Field
 
-from models import BaseUser
+from models.user import BaseUser, User
 
 
-class LoginUser(BaseUser):
-    """Login User model"""
+class PasswordMixin(BaseModel):
+    """Password model"""
 
     password: str = Field(min_length=8, max_length=32)
+
+
+class LoginUser(PasswordMixin, BaseUser):
+    """Login User model"""
+
+
+class RegisterUser(PasswordMixin, User):
+    """Register User model"""
