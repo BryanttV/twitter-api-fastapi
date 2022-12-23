@@ -1,7 +1,11 @@
 """Auth routes"""
-from fastapi import APIRouter, status
+import json
 
-from models import User
+from fastapi import APIRouter, Body, status
+from fastapi.encoders import jsonable_encoder
+
+from models.auth import RegisterUser
+from models.user import User
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
@@ -12,8 +16,15 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
     status_code=status.HTTP_201_CREATED,
     summary="Register a user",
 )
-def signup():
+def signup(user: RegisterUser = Body()):
     """Signup"""
+    with open("mocks/users.json", "r+", encoding="utf-8") as file:
+        results: list = json.load(file)
+        user_dict = jsonable_encoder(user)
+        results.append(user_dict)
+        file.seek(0)
+        file.write(json.dumps(results))
+        return user
 
 
 @router.post(

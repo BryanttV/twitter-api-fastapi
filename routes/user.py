@@ -1,7 +1,7 @@
 """User routes"""
 from fastapi import APIRouter, status
 
-from models import User
+from models.user import User
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
