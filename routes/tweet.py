@@ -1,7 +1,7 @@
 """Tweet routes"""
 from fastapi import APIRouter, status
 
-from models import Tweet
+from models.tweet import Tweet
 
 router = APIRouter(prefix="/tweets", tags=["Tweets"])
 
