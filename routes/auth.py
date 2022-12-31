@@ -1,9 +1,8 @@
 """Auth routes"""
-import json
-
 from fastapi import APIRouter, Body, status
 from fastapi.encoders import jsonable_encoder
 
+from common import utils
 from models.auth import RegisterUser
 from models.user import User
 
@@ -18,13 +17,9 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
 )
 def signup(user: RegisterUser = Body()):
     """Signup"""
-    with open("mocks/users.json", "r+", encoding="utf-8") as file:
-        results: list = json.load(file)
-        user_dict = jsonable_encoder(user)
-        results.append(user_dict)
-        file.seek(0)
-        file.write(json.dumps(results))
-        return user
+    user_dict = jsonable_encoder(user)
+    utils.create_mock(route="mocks/users.json", data=user_dict)
+    return user_dict
 
 
 @router.post(
