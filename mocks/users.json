@@ -1,1 +1,26 @@
-[{"uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "email": "user@example.com", "first_name": "string", "last_name": "string", "birth_date": "2022-12-20", "password": "stringst"}, {"uuid": "a1696a80-cd01-44a4-93ae-629fc7a88ff1", "email": "bryann@mail.com", "first_name": "Bryann", "last_name": "Valderrama", "birth_date": "2022-12-20", "password": "mypass.123"}]
+[
+    {
+        "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "user@example.com",
+        "first_name": "string",
+        "last_name": "string",
+        "birth_date": "2022-12-11",
+        "password": "stringst"
+    },
+    {
+        "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "user@example.com",
+        "first_name": "string",
+        "last_name": "string",
+        "birth_date": "2022-12-11",
+        "password": "stringst"
+    },
+    {
+        "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "user@example.com",
+        "first_name": "string",
+        "last_name": "string",
+        "birth_date": "2022-12-11",
+        "password": "stringst"
+    }
+]
